@@ -150,7 +150,7 @@ Github-Subdomains() {
     [[ ${PARALLEL} == True ]] || { spinner "${green}${bold}Github-Subdomains${end}" &
       PID="$!"
     }
-    github-subdomains -d $domain -t <GITHUB-TOKEN> | unfurl domains 1> tmp-github-subdomains-$domain 2>/dev/null
+    github-subdomains -d $domain -t $GITHUB-TOKEN | unfurl domains 1> tmp-github-subdomains-$domain 2>/dev/null
     [[ ${PARALLEL} == True ]] || kill ${PID} 2>/dev/null
     echo -e "${green}${bold}[*] Github-Subdomains$end: $(wc -l< tmp-github-subdomains-$domain)"
   }
