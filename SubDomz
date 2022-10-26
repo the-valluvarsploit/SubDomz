@@ -341,7 +341,7 @@ ThreatMiner() {
 
 Omnisint() {
 	[ "$silent" == True ] && curl -sk "https://sonar.omnisint.io/subdomains/$domain" | cut -d "[" -f1 | cut -d "]" -f1 | cut -d "\"" -f 2 | sort -u | anew subdomz-$domain.txt || {
-		[[ ${PARALLEL} == True ]] || {spinner "${green}${bold}Omnisint${end}" &
+		[[ ${PARALLEL} == True ]] || { spinner "${green}${bold}Omnisint${end}" &
 			PID="$!"
 		}
 		curl -sk "https://sonar.omnisint.io/subdomains/$url" | cut -d "[" -f1 | cut -d "]" -f1 | cut -d "\"" -f 2 | sort -u 1> tmp-omnisint-$domain 2>/dev/null
