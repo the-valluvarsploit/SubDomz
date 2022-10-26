@@ -100,7 +100,7 @@ Amass() {
 
 Gau() {
             printf "                                \r"
-            go install github.com/lc/gau@latest &>/dev/null
+	    go install github.com/lc/gau/v2/cmd/gau@latest &>/dev/null
             printf "[+] Gau Installed! \n"
 }
 
